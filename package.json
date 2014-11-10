@@ -1,8 +1,7 @@
 {
   "name": "arzhubot",
   "version": "0.0.0",
-  "private": true,
-  "author": "w_shunn <w_shunn@nifty.com>",
+  "author": "SFC CLIP",
   "description": "arz for Slack",
   "dependencies": {
     "hubot": "^2.9.3",
