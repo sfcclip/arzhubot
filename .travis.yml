@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+- '0.10'
+notifications:
+  slack: sfcclip:5d88ERPs0JDbgSr8b77FC9QP
+deploy:
+  provider: heroku
+  app: arzhubot
+  api_key: 097f4edb-a03e-4cb3-a7cb-6de58511f4b5
