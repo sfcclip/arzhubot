@@ -8,11 +8,6 @@
 # Author:
 #   @wat_shun
 
-	#名前の確認
-	robot.respond /名簿見せて/i, (msg) ->
-		list = getNicknamelist()
-		for u, n of list
-			msg.send "#{u} : #{n}"
 module.exports = (robot) ->
 
 	robot.respond /私の名前は/i, (msg) ->
