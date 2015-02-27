@@ -2,7 +2,7 @@
 #   arzに好きな名前で呼んでもらえるようにするもの
 #
 # Commands:
-#   hubot #{nickname}って呼んで
+#   hubot <query>って呼んで
 #   hubot 私の名前は
 #
 # Author:
