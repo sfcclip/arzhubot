@@ -1,6 +1,9 @@
 # Description:
 #   evalによる計算モドキ
 #
+# Commands:
+#   hubot <query>計算
+#
 # Author:
 #   @wat_shun
 
