@@ -7,8 +7,7 @@
 #   hubot 出欠
 #
 # Author:
-#   @shokai
-#   forked : https://github.com/masuilab/slack-hubot/blob/master/scripts/anonymous-post.coffee
+#   @wat_shun
 
 cronRemind = require('cron').CronJob
 cronNotice = require('cron').CronJob
