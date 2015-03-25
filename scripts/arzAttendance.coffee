@@ -113,7 +113,7 @@ module.exports = (robot) ->
 		absenceMember = absenceList.join('\n')
 		msg.send "欠席するのは#{absenceNum}人アズ"
 		if absenceNum isnt 0
-			msg.send "#{absenceMember}\nが出席するアズ"
+			msg.send "#{absenceMember}\nが欠席するアズ"
 
 
 	#月-木12:50のリマインド
