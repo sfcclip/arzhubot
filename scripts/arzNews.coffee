@@ -53,20 +53,20 @@ module.exports = (robot) ->
 			setNewsList list
 
 
-	robot.respond /記事ネタ 追加 (.*)/i, (msg) ->
-		msg.send "#{msg.match[1]}を記事ネタに追加したアズ"
-		addNewsList msg.match[1]
+	robot.respond /記事ネタ( |　)追加( |　)(.*)/i, (msg) ->
+		msg.send "#{msg.match[3]}を記事ネタに追加したアズ"
+		addNewsList msg.match[3]
 
-	robot.respond /記事ネタ 削除 (.*)/i, (msg) ->
-		msg.send "#{msg.match[1]}を記事ネタから削除したアズ"
-		deleteNewsList msg.match[1]
+	robot.respond /記事ネタ( |　)削除( |　)(.*)/i, (msg) ->
+		msg.send "#{msg.match[3]}を記事ネタから削除したアズ"
+		deleteNewsList msg.match[3]
 
 
-	robot.respond /記事ネタ 全削除/i, (msg) ->
-		msg.send "#記事ネタを全て削除したアズ"
+	robot.respond /記事ネタ( |　)全削除/i, (msg) ->
+		msg.send "記事ネタを全て削除したアズ"
 		initNewsList
 
-	robot.respond /記事ネタ 一覧/i, (msg) ->
+	robot.respond /記事ネタ( |　)一覧/i, (msg) ->
 		list = getNewsList().join('\n')
 		msg.send "記事ネタは#{getNewsNum()}件あるアズ"
 		if getNewsNum() isnt 0
