@@ -11,6 +11,6 @@ module.exports = (robot) ->
 	robot.respond /(.*)計算/i, (msg)->
 		ret =  0;
 		try
-			msg.send "わからないアズ！"
+			msg.send "わからないアズ…"
 		catch error
 			msg.send "計算できなかったアズ…"
