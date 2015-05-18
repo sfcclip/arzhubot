@@ -125,5 +125,6 @@ module.exports = (robot) ->
 	new cronDataReset '0 0 0 * * 6', () =>
 		robot.send {room: "#dev"}, "出欠のデータを消したアズ"
 		robot.send {room: "#random"}, "来週の編集会の出欠を取り始めたアズ！"
-		setList([])
+		setAttendanceList []
+		setAbsenceList []
 	, null, true, "Asia/Tokyo"
