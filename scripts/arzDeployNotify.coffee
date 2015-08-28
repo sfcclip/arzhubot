@@ -6,4 +6,7 @@
 #	cloned : https://github.com/masuilab/slack-hubot/blob/master/scripts/deploy-notify.coffee
 
 module.exports = (robot) ->
-	robot.send {room: "#dev"}, "むにゃむにゃ、おはようアズ"
+	try
+			robot.send { room: "dev" }, "むにゃむにゃ、おはようアズ"
+	catch error
+			robot.send { room: "general" }, "むにゃむにゃ、おはようアズ"
