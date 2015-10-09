@@ -29,7 +29,7 @@ module.exports = (robot) ->
         data[groupName] = groupMembers
         setGroupData(data)
 
-  # グループを削除
+    # グループを削除
     deleteGroup = (groupName) ->
         data = getGroupData()
         if data[groupName] is undefined
@@ -82,7 +82,7 @@ module.exports = (robot) ->
         else
             msg.send "グループ：#{groupName}なんて知らないアズ。"
 
-    # for debug
+    # グループの一覧
     robot.respond /グループ/i, (msg) ->
         data = getGroupData()
         if Object.keys(data).length is 0
