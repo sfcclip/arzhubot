@@ -61,11 +61,8 @@ module.exports = (robot) ->
     robot.hear /@(.+)/i, (msg) ->
         items = getGroupMembers msg.match[1]
 
-        if not items
-            msg.send "そんなグループ知らないアズ"
-            return
-
-        robot.send {link_names: 1},"#{items.map( (name) -> '@' + name ).join(' 、 ')}! #{msg.message.user.name}が呼んでるアズ！"
+        if items
+          robot.send {link_names: 1},"#{items.map( (name) -> '@' + name ).join(' 、 ')}! #{msg.message.user.name}が呼んでるアズ！"
 
     # グループを設定
     robot.respond /(.+)[\s　]登録[\s　](.+)/i, (msg) ->
