@@ -4,6 +4,7 @@
   "author": "SFC CLIP",
   "description": "arz for Slack",
   "dependencies": {
+    "cron": "^1.0.9",
     "hubot": "^2.16.0",
     "hubot-diagnostics": "^0.0.1",
     "hubot-google-images": "^0.2.1",
@@ -16,9 +17,8 @@
     "hubot-rules": "^0.1.1",
     "hubot-scripts": "^2.16.2",
     "hubot-shipit": "^0.2.0",
-    "hubot-slack": "^3.3.0",
     "hubot-youtube": "^1.0.1",
-    "cron": "^1.0.9",
+    "hubot-slack": "^4.2.2",
     "time": "^0.11.3"
   },
   "engines": {
