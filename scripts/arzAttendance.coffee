@@ -89,11 +89,11 @@ module.exports = (robot) ->
 			l = [name]
 			setAbsenceList l
 
-	robot.respond /^.*出席.*$/i, (msg) ->
+	robot.respond /.*出席.*/i, (msg) ->
 		msg.send "#{msg.message.user.name}を出席にしたアズ"
 		attend msg.message.user.name
 
-	robot.respond /^.*欠席.*$/i, (msg) ->
+	robot.respond /.*欠席.*/i, (msg) ->
 		msg.send "#{msg.message.user.name}を欠席にしたアズ"
 		absent msg.message.user.name
 
