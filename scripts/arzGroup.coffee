@@ -3,9 +3,9 @@
 #
 # Commands:
 #   hubot ランダム <groupname> -- 登録されたグループのメンバーの中からランダムに選ぶ
-#   hubot ランダム <query> <query> ...-- 引数からランダムに選ぶ
-#   hubot <groupname>[\s　]登録 <group name> <group elements> -- グループを設定
-#   hubot <groupname>[\s　]削除 <group name> -- グループを削除
+#   hubot ランダム <query>...-- 引数からランダムに選ぶ
+#   hubot <groupname> 登録 <group member>... -- グループを設定
+#   hubot <groupname> 削除 -- グループを削除
 #   hubot グループ -- 登録されているグループ一覧を表示
 #
 # Author:
