@@ -51,10 +51,10 @@ module.exports = (robot) ->
 		robot.brain.save
 		console.log list
 
-	setVoteTitle = (name) ->
-	robot.brain.data.voteTitle = name
-	robot.brain.save
-	console.log name
+	setVoteTitle = (text) ->
+		robot.brain.data.voteTitle = text
+		robot.brain.save
+		console.log text
 
 	#賛成の処理
 	agree = (name) ->
