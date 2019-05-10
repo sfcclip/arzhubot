@@ -108,19 +108,24 @@ module.exports = (robot) ->
 		agreeNum = getAgreeNum()
 		disAgreeNum = getDisAgreeNum()
 
-		msg.send "議案「#{robot.brain.data.voteTitle}」を開票するアズ"
+		if robot.brain.data.voteTitle == ""
+			setAgreeList []
+			setDisAgreeList []
+			msg.send "まだ議題が設定されていないアズ"
+		else
+			msg.send "議案「#{robot.brain.data.voteTitle}」を開票するアズ"
 
-		#賛成の出力
-		agreeMember = agreeList.join('\n')
-		msg.send "賛成は#{agreeNum}人アズ"
-		if attendanceNum isnt 0
-			msg.send "#{agreeMember}\nが賛成したアズ"
+			#賛成の出力
+			agreeMember = agreeList.join('\n')
+			msg.send "賛成は#{agreeNum}人アズ"
+			if attendanceNum isnt 0
+				msg.send "#{agreeMember}\nが賛成したアズ"
 
-		#反対の出力
-		disAgreeMember = disAgreeList.join('\n')
-		msg.send "反対は#{disAgreeNum}人アズ"
-		if absenceNum isnt 0
-			msg.send "#{disAgreeMember}\nが反対してるアズ"
+			#反対の出力
+			disAgreeMember = disAgreeList.join('\n')
+			msg.send "反対は#{disAgreeNum}人アズ"
+			if absenceNum isnt 0
+				msg.send "#{disAgreeMember}\nが反対してるアズ"
 
 	robot.respond /(.*)の投票/i, (msg) ->
 		msg.send "「#{msg.match[1]}」の投票を始めるアズ！"
