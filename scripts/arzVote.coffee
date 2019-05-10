@@ -65,7 +65,7 @@ module.exports = (robot) ->
 		if agreeList?
 			if agreeList.indexOf(name) is -1
 				agreeList[agreeList.length] = name 
-				setAgreeList attendanceList
+				setAgreeList agreeList
 		else
 			l = [name]
 			setAgreeList l
@@ -76,7 +76,7 @@ module.exports = (robot) ->
 			setDisAgreeList disAgreeList
 
 	#反対の処理
-	absent = (name) ->
+	disAgree = (name) ->
 		agreeList = getAgreeList()
 		disAgreeList = getDisAgreeList()
 
