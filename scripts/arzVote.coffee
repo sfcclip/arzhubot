@@ -118,13 +118,13 @@ module.exports = (robot) ->
 			#賛成の出力
 			agreeMember = agreeList.join('\n')
 			msg.send "賛成は#{agreeNum}人アズ"
-			if attendanceNum isnt 0
+			if agreeNum isnt 0
 				msg.send "#{agreeMember}\nが賛成したアズ"
 
 			#反対の出力
 			disAgreeMember = disAgreeList.join('\n')
 			msg.send "反対は#{disAgreeNum}人アズ"
-			if absenceNum isnt 0
+			if disAgreeNum isnt 0
 				msg.send "#{disAgreeMember}\nが反対してるアズ"
 
 	robot.respond /(.*)の投票/i, (msg) ->
