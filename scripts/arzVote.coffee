@@ -15,6 +15,7 @@ module.exports = (robot) ->
 	#robot.brain.data.absence = [] if not robot.brain.data.absence?
 	robot.brain.data.agree = [] if not robot.brain.data.agree?
 	robot.brain.data.disAgree = [] if not robot.brain.data.disAgree?
+	robot.brain.data.voteTitle = "" if not robot.brain.data.voteTitle?
 
 	#賛成の人を返す
 	getAgreeList = () ->
@@ -49,6 +50,11 @@ module.exports = (robot) ->
 		robot.brain.data.disAgree = list
 		robot.brain.save
 		console.log list
+
+	setVoteTitle = (text) ->
+	robot.brain.data.voteTitle = text
+	robot.brain.save
+	console.log text
 
 	#賛成の処理
 	agree = (name) ->
@@ -102,6 +108,8 @@ module.exports = (robot) ->
 		agreeNum = getAgreeNum()
 		disAgreeNum = getDisAgreeNum()
 
+		msg.send "議案「#{robot.brain.data.voteTitle}」を開票するアズ"
+
 		#賛成の出力
 		agreeMember = agreeList.join('\n')
 		msg.send "賛成は#{attendanceNum}人アズ"
@@ -114,8 +122,9 @@ module.exports = (robot) ->
 		if absenceNum isnt 0
 			msg.send "#{disAgreeMember}\nが反対してるアズ"
 
-	robot.respond /投票/i, (msg) ->
-		msg.send "投票を始めるアズ！"
+	robot.respond /(.*)の投票/i, (msg) ->
+		msg.send "「#{msg.match[1]}」の投票を始めるアズ！"
 		msg.send "賛成か反対か教えてほしいアズ"
-		setAttendanceList []
-		setAbsenceList []
+		setAgreeList []
+		setDisAgreeList []
+		setVoteTitle msg.match[1]
