@@ -112,7 +112,7 @@ module.exports = (robot) ->
 
 		#賛成の出力
 		agreeMember = agreeList.join('\n')
-		msg.send "賛成は#{attendanceNum}人アズ"
+		msg.send "賛成は#{agreeNum}人アズ"
 		if attendanceNum isnt 0
 			msg.send "#{agreeMember}\nが賛成したアズ"
 
