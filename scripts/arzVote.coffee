@@ -141,5 +141,5 @@ module.exports = (robot) ->
 		setDisAgreeList []
 		setVoteTitle msg.match[1]
 
-	robot.respond /[\s　]投票/i, (msg) ->
+	robot.respond /^投票/i, (msg) ->
 		msg.send "「○○の投票」って言うと投票を始められるアズ！"
