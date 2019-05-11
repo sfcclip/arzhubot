@@ -134,12 +134,12 @@ module.exports = (robot) ->
 					author_name: "Chart"                                                                                                                                                                                                         
 					image_url: "https://quickchart.io/chart?c={type:%27pie%27,data:{labels:[%27賛成%27,%27反対%27],%20datasets:[{data:[#{agreeMember},#{disAgreeMember}]}]}}"
 
-	robot.respond /(.*)の投票/i, (msg) ->
+	robot.respond /(.*)(の|を)投票/i, (msg) ->
 		msg.send "「#{msg.match[1]}」の投票を始めるアズ！"
 		msg.send "賛成か反対か教えてほしいアズ"
 		setAgreeList []
 		setDisAgreeList []
 		setVoteTitle msg.match[1]
 
-	robot.respond /投票/i, (msg) ->
+	robot.respond /[\s　]投票/i, (msg) ->
 		msg.send "「○○の投票」って言うと投票を始められるアズ！"
