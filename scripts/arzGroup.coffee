@@ -53,10 +53,10 @@ module.exports = (robot) ->
         if items.length is 1
             items = getGroupMembers(items[0])
             if not items
-                msg.send "そんなグループ知らないアズ"
+                msg.send "そんなグループ知らないっぷ"
                 return
 
-        msg.send "#{msg.random(items)}に決めたアズ！"
+        msg.send "#{msg.random(items)}に決めたっぷ"
 
     robot.hear /.*@([^\s　]+)/i, (msg) ->
         items = getGroupMembers msg.match[1]
@@ -69,21 +69,21 @@ module.exports = (robot) ->
         groupName = msg.match[1]
         groupElement = msg.match[2].split(/[\s　]+/)
         setGroup groupName, groupElement
-        msg.send "グループ：#{groupName}を覚えたアズ"
+        msg.send "グループ：#{groupName}を覚えたっぷ!"
 
     # グループを削除
     robot.respond /(.+)[\s　]削除/i, (msg) ->
         groupName = msg.match[1]
         if deleteGroup groupName
-            msg.send "グループ：#{groupName}を忘れたアズ。"
+            msg.send "グループ：#{groupName}を忘れたっぷ。"
         else
-            msg.send "グループ：#{groupName}なんて知らないアズ。"
+            msg.send "グループ：#{groupName}なんて知らないっぷ。"
 
     # グループの一覧
     robot.respond /グループ/i, (msg) ->
         data = getGroupData()
         if Object.keys(data).length is 0
-            msg.send "知ってるグループはないアズ"
+            msg.send "知ってるグループはないっぷ"
             return
         for groupName, groupMembers of data
             msg.send "#{groupName}: #{groupMembers.join()}"

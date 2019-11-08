@@ -6,17 +6,17 @@ module.exports = (robot) ->
 	
 	robot.respond /(.*)の画像/i, (msg) ->
 		imageMe msg, msg.match[1], (url) ->
-			msg.send "見つけてきたアズー！"
+			msg.send "見つけてきたっぷー!"
 			msg.send url
 
 	robot.hear /(おなか|お腹)(減った|へった|空いた|すいた|ぺこぺこ|ペコペコ)/i, (msg)->
 		imageMe msg, "飯テロ", (url) ->
-			msg.send "飯テロアズ！"
+			msg.send "飯テロっぷ!"
 			msg.send url
 
 	robot.respond /飯テロ/i, (msg)->
 		imageMe msg, "飯テロ", (url) ->
-			msg.send "わかったアズ！"
+			msg.send "わかったっぷ!"
 			msg.send url.replace(":large","")
 
 imageMe = (msg, query, animated, faces, cb) ->

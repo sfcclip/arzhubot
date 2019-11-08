@@ -90,11 +90,11 @@ module.exports = (robot) ->
 			setAbsenceList l
 
 	robot.respond /.*出席.*/i, (msg) ->
-		msg.send "#{msg.message.user.name}を出席にしたアズ"
+		msg.send "#{msg.message.user.name}を出席にしたっぷ!"
 		attend msg.message.user.name
 
 	robot.respond /.*欠席.*/i, (msg) ->
-		msg.send "#{msg.message.user.name}を欠席にしたアズ"
+		msg.send "#{msg.message.user.name}を欠席にしたっぷ!"
 		absent msg.message.user.name
 
 	robot.respond /出欠$/i, (msg) ->
@@ -105,26 +105,26 @@ module.exports = (robot) ->
 
 		#出席の出力
 		attendanceMember = attendanceList.join('\n')
-		msg.send "出席するのは#{attendanceNum}人アズ"
+		msg.send "出席するのは#{attendanceNum}人っぷ!"
 		if attendanceNum isnt 0
-			msg.send "#{attendanceMember}\nが出席するアズ"
+			msg.send "#{attendanceMember}\nが出席するっぷ!"
 
 		#欠席の出力
 		absenceMember = absenceList.join('\n')
-		msg.send "欠席するのは#{absenceNum}人アズ"
+		msg.send "欠席するのは#{absenceNum}人っぷ!"
 		if absenceNum isnt 0
-			msg.send "#{absenceMember}\nが欠席するアズ"
+			msg.send "#{absenceMember}\nが欠席するっぷ!"
 
 
 	#月-木12:50のリマインド
 	new cronRemind '0 50 12 * * 1-4', () =>
-		robot.send {room: "#random"}, "今週の編集会の出欠を教えてほしいアズ！"
+		robot.send {room: "#random"}, "今週の編集会の出欠を教えてほしいっぷ！"
 	, null, true, "Asia/Tokyo"
 
 	#編集会後にデータを消す&再リマインド
 	new cronDataReset '0 0 0 * * 6', () =>
-		robot.send {room: "#dev"}, "出欠のデータを消したアズ"
-		robot.send {room: "#random"}, "来週の編集会の出欠を取り始めたアズ！"
+		robot.send {room: "#dev"}, "出欠のデータを消したっぷ!"
+		robot.send {room: "#random"}, "来週の編集会の出欠を取り始めたっぷ!"
 		setAttendanceList []
 		setAbsenceList []
 	, null, true, "Asia/Tokyo"

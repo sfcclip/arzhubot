@@ -95,11 +95,11 @@ module.exports = (robot) ->
 			setDisAgreeList l
 
 	robot.respond /.*(賛成|異議なし).*/i, (msg) ->
-		msg.send "#{msg.message.user.name}を賛成にしたアズ"
+		msg.send "#{msg.message.user.name}を賛成にしたっぷ"
 		agree msg.message.user.name
 
 	robot.respond /.*(反対|異議あり).*/i, (msg) ->
-		msg.send "#{msg.message.user.name}を反対にしたアズ"
+		msg.send "#{msg.message.user.name}を反対にしたっぷ"
 		disAgree msg.message.user.name
 
 	robot.respond /開票.*/i, (msg) ->
@@ -111,21 +111,21 @@ module.exports = (robot) ->
 		if robot.brain.data.voteTitle == ""
 			setAgreeList []
 			setDisAgreeList []
-			msg.send "まだ議題が設定されていないアズ"
+			msg.send "まだ議題が設定されていないっぷ"
 		else
-			msg.send "議案「#{robot.brain.data.voteTitle}」を開票するアズ"
+			msg.send "議案「#{robot.brain.data.voteTitle}」を開票するっぷ"
 
 			#賛成の出力
 			agreeMember = agreeList.join('\n')
-			msg.send "賛成は#{agreeNum}人アズ"
+			msg.send "賛成は#{agreeNum}人っぷ"
 			if agreeNum isnt 0
-				msg.send "#{agreeMember}\nが賛成したアズ"
+				msg.send "#{agreeMember}\nが賛成したっぷ"
 
 			#反対の出力
 			disAgreeMember = disAgreeList.join('\n')
-			msg.send "反対は#{disAgreeNum}人アズ"
+			msg.send "反対は#{disAgreeNum}人っぷ"
 			if disAgreeNum isnt 0
-				msg.send "#{disAgreeMember}\nが反対してるアズ"
+				msg.send "#{disAgreeMember}\nが反対してるっぷ"
 
 			#グラフの表示                                                                                                                                                                                                    
 			robot.emit 'slack.attachment',                                                                                                                                                                                                   
@@ -135,11 +135,11 @@ module.exports = (robot) ->
 					image_url: "https://quickchart.io/chart?c={type:%27pie%27,data:{labels:[%27賛成%27,%27反対%27],%20datasets:[{data:[#{agreeMember},#{disAgreeMember}]}]}}"
 
 	robot.respond /(.*)(の|を)投票/i, (msg) ->
-		msg.send "「#{msg.match[1]}」の投票を始めるアズ！"
-		msg.send "賛成か反対か教えてほしいアズ"
+		msg.send "「#{msg.match[1]}」の投票を始めるっぷ！"
+		msg.send "賛成か反対か教えてほしいっぷ"
 		setAgreeList []
 		setDisAgreeList []
 		setVoteTitle msg.match[1]
 
 	robot.respond /^投票/i, (msg) ->
-		msg.send "「○○の投票」って言うと投票を始められるアズ！"
+		msg.send "「○○の投票」って言うと投票を始められるっぷ！"

@@ -64,7 +64,7 @@ module.exports = (robot) ->
 			console.log "#{news}はありませんでした。"
 
 	robot.respond /記事ネタ( |　)追加( |　)(.*)/i, (msg) ->
-		msg.send "#{msg.match[3]}を記事ネタに追加したアズ"
+		msg.send "#{msg.match[3]}を記事ネタに追加したっぷ"
 		addNewsList msg.match[3]
 
 	robot.respond /記事ネタ( |　)削除( |　)(.*)/i, (msg) ->
@@ -74,27 +74,27 @@ module.exports = (robot) ->
 			console.log "削除クエリ「#{n + 1}」番の記事"
 			list = getNewsList()
 			if 0 <= n and n < list.length
-				msg.send "#{list[n]}を記事ネタから削除したアズ"
+				msg.send "#{list[n]}を記事ネタから削除したっぷ"
 				deleteNewsList list[n]
 			else if not (0 <= n and n < list.length)
-				msg.send "その番号の記事はないアズ"
+				msg.send "その番号の記事はないっぷ"
 			
 		else 
 			console.log "削除クエリ「#{msg.match[3]}」"
 			list = getNewsList()
 			if list.indexOf(msg.match[3]) isnt -1
-				msg.send "#{msg.match[3]}を記事ネタから削除したアズ"
+				msg.send "#{msg.match[3]}を記事ネタから削除したっぷ"
 				deleteNewsList msg.match[3]
 			else
-				msg.send "その記事はないアズ"
+				msg.send "その記事はないっぷ"
 
 	robot.respond /記事ネタ( |　)全削除/i, (msg) ->
-		msg.send "記事ネタを全て削除したアズ"
+		msg.send "記事ネタを全て削除したっぷ"
 		initNewsList
 
 	robot.respond /記事ネタ( |　)一覧/i, (msg) ->
 		n = getNewsNum()
-		msg.send "記事ネタは#{n}件あるアズ"
+		msg.send "記事ネタは#{n}件あるっぷ"
 		if n isnt 0
 			list = getNewsList()
 			ret = ""

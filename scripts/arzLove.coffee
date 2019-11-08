@@ -15,19 +15,19 @@ module.exports = (robot) ->
 		return newScore
 
 
-	robot.hear /アーズ？/i, (msg) ->
+	robot.hear /くりっぷちゃん?/i, (msg) ->
 		msg.send msg.random [
-			"？",
-			"呼んだアズ？"
-			"#{msg.message.user.name}、何か用アズ？"
+			"?",
+			"呼んだっぷ?"
+			"#{msg.message.user.name}、何か用っぷ?"
 		]
 		addLove 1
 		
 
 	robot.respond /(ベシベシ|バシバシ|ボコ)/i, (msg) ->
 		msg.send msg.random [
-			"痛いアズー！",
-			"やめてアズー！"
+			"痛いっぷ?",
+			"やめてほしいっぷー!"
 		]
 		addLove -10
 
@@ -40,16 +40,16 @@ module.exports = (robot) ->
 
 	robot.respond /よしよし/i, (msg) ->
 		msg.send msg.random [
-			"照れるアズ〜"
+			"照れるっぷ〜"
 		]
 		addLove 3
 		
 	robot.respond /好き/i, (msg) ->
 		msg.send msg.random [
-			"僕も#{msg.message.user.name}のこと好きアズ！",
+			"僕も#{msg.message.user.name}のこと好きっぷ！",
 			"❤️"
 		]
 		addLove 5
 
 	robot.respond /好感度/i, (msg)->
-		msg.send "#{msg.message.user.name}への好感度は#{addLove 0}アズ！"
+		msg.send "#{msg.message.user.name}への好感度は#{addLove 0}っぷ！"

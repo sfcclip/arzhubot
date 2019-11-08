@@ -7,6 +7,6 @@
 
 module.exports = (robot) ->
 	try
-			robot.send { room: "dev" }, "むにゃむにゃ、おはようアズ"
+			robot.send { room: "dev" }, "むにゃむにゃ、おはようっぷ"
 	catch error
-			robot.send { room: "general" }, "むにゃむにゃ、おはようアズ"
+			robot.send { room: "general" }, "むにゃむにゃ、おはようっぷ"

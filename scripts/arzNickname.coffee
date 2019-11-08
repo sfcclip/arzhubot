@@ -14,5 +14,5 @@ module.exports = (robot) ->
 		msg.send "#{robot.brain.get("nickname") or msg.message.user.name}！"
 
 	robot.respond /(.*)って呼んで/i, (msg) ->
-		msg.send "じゃあこれから#{msg.message.user.name}のことは#{msg.match[1]}って呼ぶアズ！"
+		msg.send "じゃあこれから#{msg.message.user.name}のことは#{msg.match[1]}って呼ぶっぷ！"
 		robot.brain.set("nickname", msg.match[1])
